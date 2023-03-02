@@ -1,8 +1,6 @@
-
-
-//function to generate a password
-function generatePassword() {
-  var lowerCase = [
+//Variables
+var charBank = {
+  lowerCase: [
     "a",
     "b",
     "c",
@@ -29,8 +27,8 @@ function generatePassword() {
     "x",
     "y",
     "z",
-  ];
-  var upperCase = [
+  ],
+  upperCase: [
     "A",
     "B",
     "C",
@@ -57,8 +55,8 @@ function generatePassword() {
     "X",
     "Y",
     "Z",
-  ];
-  var special = [
+  ],
+special: [
     "!",
     "#",
     "$",
@@ -90,23 +88,49 @@ function generatePassword() {
     "|",
     "}",
     "~",
-  ];
-  var passwordLength = Number("How many characters would you like to use?");
+  ],
+  numbers: ['0','1','2','3','4','5','6','7','8','9']
+};
 
-if (passwordLength<7 || passwordLength>129){
+var includeLower = confirm("Would you like to use lower-case letter?");
+var includeUpper = confirm("Would you like to use upper-case letters?");
+var includeSpecial = confirm("Would you like to include special charcters?");
+
+
+
+function makePassword(){
+  var password = generatePassword();
+  var passwordChar = document.querySelector("#password");
+  passwordChar.value = password;
+}
+
+function generatePassword(){
+  var passwordLength = prompt("Please choose a password length between 8 and 128 charcters");
+
+  if (passwordLength<7 || passwordLength>129){
   alert("Please choose a password length between 8 and 128 charcters");
   return "Invalid";
-}
+}}
 
-}
 
-  for (var i = 0; i < passwordLength; i++);
-  //generate a number
-  var randomNumber = Math.floor(Math.random() * charBank.length)
-var newChar =charBank[randomNumber]
-password = password + newChar
-  //function used to choose special characters
 
+
+
+
+// var charBank = []
+// if(includeLower){
+//   return(charBank.lowerCase)
+// }
+// console.log(charBank)
+
+
+
+//   for (var i = 0; i < passwordLength; i++);
+//   //generate a number
+//   var randomNumber = Math.floor(Math.random() * charBank.length)
+// var newChar =charBank[randomNumber]
+// password = password + newChar
+//   //function used to choose special characters
 
 
 // // Assignment code here
