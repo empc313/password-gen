@@ -93,14 +93,12 @@ special: [
 };
 
 
-
-
 function makePassword(){
   var password = generatePassword();
   var passwordChar = document.querySelector("#password");
   passwordChar.value = password;
 }
-
+//declaring function to generate password
 function generatePassword(){
   var passwordLength = prompt("Please choose a password length between 8 and 128 charcters");
 
@@ -109,12 +107,38 @@ function generatePassword(){
   return "Invalid";
 }}
 
-
+//confirm if password should include the following
 var chars = [];
 var includeNumbers = confirm("Would you like to use numbers?");
 var includeLower = confirm("Would you like to use lower-case letter?");
 var includeUpper = confirm("Would you like to use upper-case letters?");
 var includeSpecial = confirm("Would you like to include special charcters?");
+
+if(includeNumbers){
+  chars = chars.concat(charBank.numbers);
+}
+if(includeLower){
+  chars = chars.concat(charBank.lowerCase);
+}
+if(includeUpper){
+  chars = chars.concat(charBank.upperCase);
+}
+if(includeSpecial){
+  chars = chars.concat(charBank.special);
+}
+
+//make a random varible to genrate password
+var pass ="";
+ for (i = 0; i < passwordLength; i++){
+  var randomNumber = Math.floor(Math.random()*chars.length);
+  var randomChar = char[randomNumber];
+  pass += randomChar;
+  return pass;}
+  
+  //generate password on click
+  var generateBtn =document.querySelector('#generate');
+  generateBtn.addEventListener("click", makePassword);
+ 
 
 
 
