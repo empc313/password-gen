@@ -92,9 +92,6 @@ special: [
   numbers: ['0','1','2','3','4','5','6','7','8','9']
 };
 
-var includeLower = confirm("Would you like to use lower-case letter?");
-var includeUpper = confirm("Would you like to use upper-case letters?");
-var includeSpecial = confirm("Would you like to include special charcters?");
 
 
 
@@ -113,6 +110,11 @@ function generatePassword(){
 }}
 
 
+var chars = [];
+var includeNumbers = confirm("Would you like to use numbers?");
+var includeLower = confirm("Would you like to use lower-case letter?");
+var includeUpper = confirm("Would you like to use upper-case letters?");
+var includeSpecial = confirm("Would you like to include special charcters?");
 
 
 
