@@ -96,11 +96,6 @@ var includeLower = confirm("Would you like to use lower-case letter?");
 var includeUpper = confirm("Would you like to use upper-case letters?");
 var includeSpecial = confirm("Would you like to include special charcters?");
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-}
 
 //function to generate the type of password you want to create
 function generatePassword() {
@@ -118,19 +113,23 @@ function generatePassword() {
   }
   var passwordLength = prompt(
     "Please choose a password length between 8 and 128 charcters"
-  );
-
-  if (passwordLength < 7 || passwordLength > 129) {
-    alert("Please choose a password length between 8 and 128 charcters");
-    return "Invalid";
+    );
+    
+    if (passwordLength < 7 || passwordLength > 129) {
+      alert("Please choose a password length between 8 and 128 charcters");
+      return "Invalid";
+    }
   }
-}
-
-// function generatePassword(){
-//   var generate = "";
+  
+  function writePassword() {
+        var randomChar = Math.floor(Math.random()* charBank.length);
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+  }
+  // function generatePassword(){
+    //   var generate = "";
 //   for(i = 0; password; i++){
-//     var index = Math.floor(Math.random()* charBank.length);
-//     var randomPass = charBank[index];
 //     generate += randomPass;
 //   }}
 
