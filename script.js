@@ -90,24 +90,23 @@ var special = [
   "~",
 ];
 
-//confirm if password should include the following
-var includeNumbers = confirm("Would you like to use numbers?");
-var includeLower = confirm("Would you like to use lower-case letter?");
-var includeUpper = confirm("Would you like to use upper-case letters?");
-var includeSpecial = confirm("Would you like to include special charcters?");
 
 
 //function to generate the type of password you want to create
 function generatePassword() {
+  var includeNumbers = confirm("Would you like to use numbers?");
   if (includeNumbers) {
     includeNumbers = charBank.concat(charBank.numbers);
   }
+  var includeLower = confirm("Would you like to use lower-case letter?");
   if (includeLower) {
     includeLower = charBank.concat(charBank.lowerCase);
   }
+  var includeUpper = confirm("Would you like to use upper-case letters?");
   if (includeUpper) {
     upperCase = charBank.concat(charBank.upperCase);
   }
+  var includeSpecial = confirm("Would you like to include special charcters?");
   if (includeSpecial) {
     speechSynthesis = charBank.concat(charBank.special);
   }
