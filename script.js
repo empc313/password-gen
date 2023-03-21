@@ -123,7 +123,6 @@ function generatePassword() {
     return  charBank[Math.floor(Math.random() * charBank.length)];
   }
   
-  
   function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
