@@ -90,6 +90,9 @@ var special = [
   "}",
   "~",
 ];
+var newPassword =[];
+var charBank = number.concat(lowerCase).concat(upperCase).concat(special);
+
 
 //function to generate the type of password you want to create
 function generatePassword() { 
@@ -116,8 +119,7 @@ function generatePassword() {
       alert("Please choose a password length between 8 and 128 charcters");
       return "Invalid";
     } 
-    
-    var charBank = number.concat(lowerCase).concat(upperCase).concat(special)
+     
     return  charBank[Math.floor(Math.random() * charBank.length)];
   }
   

@@ -1,4 +1,4 @@
-# Module-3
+# Password Generator
 
 ## <https://empc313.github.io/Module--3/>
 
