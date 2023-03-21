@@ -1,5 +1,6 @@
+
 //Variables
-var charBank = "";
+var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var lowerCase = [
   "a",
   "b",
@@ -90,47 +91,42 @@ var special = [
   "~",
 ];
 
-
-
 //function to generate the type of password you want to create
-function generatePassword() {
+function generatePassword() { 
   var includeNumbers = confirm("Would you like to use numbers?");
-  if (includeNumbers) {
-    includeNumbers = charBank.concat(charBank.numbers);
+  if (includeNumbers === true) {
+    
   }
   var includeLower = confirm("Would you like to use lower-case letter?");
-  if (includeLower) {
-    includeLower = charBank.concat(charBank.lowerCase);
+  if (includeLower === true) {
+    
   }
   var includeUpper = confirm("Would you like to use upper-case letters?");
-  if (includeUpper) {
-    upperCase = charBank.concat(charBank.upperCase);
+  if (includeUpper === true) {
+    true;
   }
   var includeSpecial = confirm("Would you like to include special charcters?");
   if (includeSpecial) {
-    speechSynthesis = charBank.concat(charBank.special);
+    true;
   }
   var passwordLength = prompt(
     "Please choose a password length between 8 and 128 charcters"
     );
-    
     if (passwordLength < 7 || passwordLength > 129) {
       alert("Please choose a password length between 8 and 128 charcters");
       return "Invalid";
-    }
+    } 
+    
+    var charBank = number.concat(lowerCase).concat(upperCase).concat(special)
+    return  charBank[Math.floor(Math.random() * charBank.length)];
   }
   
+  
   function writePassword() {
-        var randomChar = Math.floor(Math.random()* charBank.length);
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
   }
-  // function generatePassword(){
-    //   var generate = "";
-//   for(i = 0; password; i++){
-//     generate += randomPass;
-//   }}
 
 //generate password on click
 var generateBtn = document.querySelector("#generate");
